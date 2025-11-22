@@ -1,0 +1,20 @@
+server:
+  port: 8082
+
+core-data-service:
+  base-url: ${CORE_DATA_SERVICE_BASE_URL:http://financial-service:8082}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  endpoint:
+    prometheus:
+      enabled: true
+alpha-vantage:
+  api-key: ${ALPHA_VANTAGE_API_KEY}
+  base-url: https://www.alphavantage.co/query
+  timeout: 30000  # 30 segundos
+bull-market-api:
+  base-url: ${BULL_MARKET_URL_API:https://sua-api-interna.com/api}

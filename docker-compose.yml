@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  api-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api-financial-service
+    ports:
+      - "8082:8082"
+    env_file:
+      - .env
+    environment:
+      # URL do core-data-service dentro da rede Docker
+      CORE_DATA_SERVICE_BASE_URL: http://financial-service:8082
+
+      # Actuator/Prometheus
+      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: health,info,prometheus,metrics
+      MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED: "true"
+
+      SPRING_PROFILES_ACTIVE: docker
+    networks:
+      - infra-local_default
+    restart: unless-stopped
+
+networks:
+  infra-local_default:
+    external: true
