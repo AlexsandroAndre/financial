@@ -1,8 +1,12 @@
 server:
   port: 8082
 
-core-data-service:
+financial-service:
   base-url: ${CORE_DATA_SERVICE_BASE_URL:http://financial-service:8082}
+logging:
+  level:
+    com.financial.report.infrastructure.presentation.version: DEBUG
+    org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: DEBUG
 
 management:
   endpoints:
