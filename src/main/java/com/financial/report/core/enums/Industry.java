@@ -1,0 +1,22 @@
+package com.financial.report.core.enums;
+
+public enum Industry {
+    SOFTWARE,
+    SEMICONDUCTORS,
+    HARDWARE,
+    BANKS,
+    INSURANCE,
+    PHARMACEUTICALS,
+    BIOTECHNOLOGY,
+    RETAIL,
+    AUTOMOTIVE,
+    AEROSPACE,
+    RETAIL_REIT,
+    OFFICE_REIT,
+    RESIDENTIAL_REIT,
+    INDUSTRIAL_REIT,
+    OIL_GAS,
+    RENEWABLE_ENERGY,
+    ELECTRICAL_EQUIPMENT,
+    OTHER
+}

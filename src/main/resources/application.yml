@@ -8,6 +8,23 @@ logging:
     com.financial.report.infrastructure.presentation.version: DEBUG
     org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping: DEBUG
 
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5434/projeto_impiricus
+    username: impiricus
+    password: impiricus
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update    # create, create-drop, validate, none, update
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+    open-in-view: false
+
+
 management:
   endpoints:
     web:
